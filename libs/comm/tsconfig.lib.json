@@ -1,9 +1,25 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "declaration": true,
-    "outDir": "../../dist/libs/comm"
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "types/*": [
+        "../../types/*"
+      ],
+    },
+    "baseUrl": ".",
+    "outDir": "../../dist/libs/common"
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
+  "include": [
+    "src/**/*",
+    "../../types/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test",
+    "**/*spec.ts"
+  ]
 }

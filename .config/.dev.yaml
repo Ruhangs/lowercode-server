@@ -11,12 +11,18 @@ MONGODB_CONFIG:
 MYSQL_CONFIG:
   name: "lowercode"
   type: "mysql"
-  host: "localhost"
-  port: 3309
+  host: "162.14.72.240"
+  port: 3307
   username: "root"
   password: "root"
   database: "lowercode"
   entities: "mysql"
   logging: false
   synchronize: true
+GITGUB_CONFIG:
+  CLIENT_ID: 7a3278ef4c923da9509b
+  CLIENT_SECRETS: 6ce3753b4a41db318ad282d6e9fe3260d6f102c9
+FEISHU_CONFIG:
+  FEISHU_APP_ID: ''
+  FEISHU_APP_SECRET: ''
 

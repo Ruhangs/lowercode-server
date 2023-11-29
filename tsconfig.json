@@ -17,7 +17,7 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "resolveJsonModule": true, // 解决TS中不能使用Json的问题
+    "resolveJsonModule": true,
     "paths": {
       "@app/comm": [
         "libs/comm/src"

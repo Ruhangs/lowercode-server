@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "123",
   "scripts": {
-    "dev": "cd .. && pnpm start:lowcode"
+    "dev": "cd .. && pnpm start:lowcode",
+    "dev:user": "cd .. && pnpm start-client:user"
   }
 }
