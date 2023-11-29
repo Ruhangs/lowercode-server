@@ -7,7 +7,7 @@ export * from './exceptions/business.exception';
 // export * from './exceptions/feishu.exception';
 export * from './exceptions/http.exception.filter';
 export * from './interceptors/transform.interceptor';
-// export * from './constants';
+export * from './constants';
 export * from './utils';
 export * from './helper';
 // export * from './helper/feishu/auth';

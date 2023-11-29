@@ -1,9 +1,9 @@
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import * as packageConfig from '../../low-code-test/package.json';
+import * as packageConfig from '../../materials/package.json';
 
 export const generateDocument = (app) => {
   const options = new DocumentBuilder()
-    .setTitle(packageConfig.name)
+    .setTitle('物料系统')
     .setDescription(packageConfig.description)
     .setVersion(packageConfig.version)
     .build();

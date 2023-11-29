@@ -22,13 +22,13 @@
         "tsConfigPath": "apps/low-code-test/tsconfig.app.json"
       }
     },
-    "devops": {
+    "materials": {
       "type": "application",
-      "root": "apps/devops",
+      "root": "apps/materials",
       "entryFile": "main",
-      "sourceRoot": "apps/devops/src",
+      "sourceRoot": "apps/materials/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/devops/tsconfig.app.json"
+        "tsConfigPath": "apps/materials/tsconfig.app.json"
       }
     },
     "comm": {

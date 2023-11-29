@@ -1,0 +1,8 @@
+{
+  "name": "materials",
+  "version": "0.0.1",
+  "description": "物料服务",
+  "scripts": {
+    "dev": "cd .. && pnpm start:materials"
+  }
+}

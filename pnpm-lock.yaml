@@ -19,10 +19,13 @@ importers:
         version: registry.npmmirror.com/@nestjs/config@3.1.1(@nestjs/common@9.0.0)(reflect-metadata@0.1.13)
       '@nestjs/core':
         specifier: ^9.0.0
-        version: registry.npmmirror.com/@nestjs/core@9.0.0(@nestjs/common@9.0.0)(@nestjs/platform-express@9.0.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
+        version: registry.npmmirror.com/@nestjs/core@9.0.0(@nestjs/common@9.0.0)(@nestjs/microservices@10.2.10)(@nestjs/platform-express@9.0.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
       '@nestjs/jwt':
         specifier: ^10.2.0
         version: registry.npmmirror.com/@nestjs/jwt@10.2.0(@nestjs/common@9.0.0)
+      '@nestjs/microservices':
+        specifier: ^10.2.10
+        version: registry.npmmirror.com/@nestjs/microservices@10.2.10(@nestjs/common@9.0.0)(@nestjs/core@9.0.0)(cache-manager@5.3.1)(reflect-metadata@0.1.13)(rxjs@7.2.0)
       '@nestjs/passport':
         specifier: ^10.0.2
         version: registry.npmmirror.com/@nestjs/passport@10.0.2(@nestjs/common@9.0.0)(passport@0.6.0)
@@ -35,6 +38,9 @@ importers:
       axios:
         specifier: ^1.6.2
         version: registry.npmmirror.com/axios@1.6.2
+      cache-manager-redis-store:
+        specifier: ^3.0.1
+        version: registry.npmmirror.com/cache-manager-redis-store@3.0.1
       class-transformer:
         specifier: ^0.5.1
         version: registry.npmmirror.com/class-transformer@0.5.1
@@ -74,6 +80,9 @@ importers:
       passport-jwt:
         specifier: ^4.0.1
         version: registry.npmmirror.com/passport-jwt@4.0.1
+      redis:
+        specifier: ^4.6.11
+        version: registry.npmmirror.com/redis@4.6.11
       reflect-metadata:
         specifier: ^0.1.13
         version: registry.npmmirror.com/reflect-metadata@0.1.13
@@ -85,7 +94,7 @@ importers:
         version: registry.npmmirror.com/turbo@1.10.14
       typeorm:
         specifier: ^0.3.17
-        version: registry.npmmirror.com/typeorm@0.3.17(mongodb@6.1.0)(mysql2@3.6.1)(ts-node@10.0.0)
+        version: registry.npmmirror.com/typeorm@0.3.17(mongodb@6.1.0)(mysql2@3.6.1)(redis@4.6.11)(ts-node@10.0.0)
       yaml:
         specifier: ^2.3.2
         version: registry.npmmirror.com/yaml@2.3.2
@@ -98,7 +107,7 @@ importers:
         version: registry.npmmirror.com/@nestjs/schematics@9.0.0(chokidar@3.5.3)(typescript@4.7.4)
       '@nestjs/testing':
         specifier: ^9.0.0
-        version: registry.npmmirror.com/@nestjs/testing@9.0.0(@nestjs/common@9.0.0)(@nestjs/core@9.0.0)(@nestjs/platform-express@9.0.0)
+        version: registry.npmmirror.com/@nestjs/testing@9.0.0(@nestjs/common@9.0.0)(@nestjs/core@9.0.0)(@nestjs/microservices@10.2.10)(@nestjs/platform-express@9.0.0)
       '@types/express':
         specifier: ^4.17.13
         version: registry.npmmirror.com/@types/express@4.17.13
@@ -157,6 +166,8 @@ importers:
   apps/devops: {}
 
   apps/low-code-test: {}
+
+  apps/materials: {}
 
   apps/user: {}
 
@@ -1620,7 +1631,7 @@ packages:
       rxjs: ^7.0.0
     dependencies:
       '@nestjs/common': registry.npmmirror.com/@nestjs/common@9.0.0(cache-manager@5.3.1)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
-      '@nestjs/core': registry.npmmirror.com/@nestjs/core@9.0.0(@nestjs/common@9.0.0)(@nestjs/platform-express@9.0.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
+      '@nestjs/core': registry.npmmirror.com/@nestjs/core@9.0.0(@nestjs/common@9.0.0)(@nestjs/microservices@10.2.10)(@nestjs/platform-express@9.0.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
       cache-manager: registry.npmmirror.com/cache-manager@5.3.1
       reflect-metadata: registry.npmmirror.com/reflect-metadata@0.1.13
       rxjs: registry.npmmirror.com/rxjs@7.2.0
@@ -1708,7 +1719,7 @@ packages:
       uuid: registry.npmmirror.com/uuid@9.0.0
     dev: false
 
-  registry.npmmirror.com/@nestjs/core@9.0.0(@nestjs/common@9.0.0)(@nestjs/platform-express@9.0.0)(reflect-metadata@0.1.13)(rxjs@7.2.0):
+  registry.npmmirror.com/@nestjs/core@9.0.0(@nestjs/common@9.0.0)(@nestjs/microservices@10.2.10)(@nestjs/platform-express@9.0.0)(reflect-metadata@0.1.13)(rxjs@7.2.0):
     resolution: {integrity: sha512-Ib25JrYQf5ICro19FBytoMpMQicanC4HG3goPBSqsolu+AhVzSU0OhDwmmiDy3aHgmheFnNEEdUH+Gh5Rm2cNw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@nestjs/core/-/core-9.0.0.tgz}
     id: registry.npmmirror.com/@nestjs/core/9.0.0
     name: '@nestjs/core'
@@ -1730,6 +1741,7 @@ packages:
         optional: true
     dependencies:
       '@nestjs/common': registry.npmmirror.com/@nestjs/common@9.0.0(cache-manager@5.3.1)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
+      '@nestjs/microservices': registry.npmmirror.com/@nestjs/microservices@10.2.10(@nestjs/common@9.0.0)(@nestjs/core@9.0.0)(cache-manager@5.3.1)(reflect-metadata@0.1.13)(rxjs@7.2.0)
       '@nestjs/platform-express': registry.npmmirror.com/@nestjs/platform-express@9.0.0(@nestjs/common@9.0.0)(@nestjs/core@9.0.0)
       '@nuxtjs/opencollective': registry.npmmirror.com/@nuxtjs/opencollective@0.3.2
       fast-safe-stringify: registry.npmmirror.com/fast-safe-stringify@2.1.1
@@ -1778,6 +1790,53 @@ packages:
       reflect-metadata: registry.npmmirror.com/reflect-metadata@0.1.13
     dev: false
 
+  registry.npmmirror.com/@nestjs/microservices@10.2.10(@nestjs/common@9.0.0)(@nestjs/core@9.0.0)(cache-manager@5.3.1)(reflect-metadata@0.1.13)(rxjs@7.2.0):
+    resolution: {integrity: sha512-vebXc4lF67grtLr3UXc+rPErH5aCzCez1Y2Oec4k2K4ObhjftNug7L2O9W3XiprHlwPhPXc51VQ9nhKn7IFAxw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@nestjs/microservices/-/microservices-10.2.10.tgz}
+    id: registry.npmmirror.com/@nestjs/microservices/10.2.10
+    name: '@nestjs/microservices'
+    version: 10.2.10
+    peerDependencies:
+      '@grpc/grpc-js': '*'
+      '@nestjs/common': ^10.0.0
+      '@nestjs/core': ^10.0.0
+      '@nestjs/websockets': ^10.0.0
+      amqp-connection-manager: '*'
+      amqplib: '*'
+      cache-manager: '*'
+      ioredis: '*'
+      kafkajs: '*'
+      mqtt: '*'
+      nats: '*'
+      reflect-metadata: ^0.1.12
+      rxjs: ^7.1.0
+    peerDependenciesMeta:
+      '@grpc/grpc-js':
+        optional: true
+      '@nestjs/websockets':
+        optional: true
+      amqp-connection-manager:
+        optional: true
+      amqplib:
+        optional: true
+      cache-manager:
+        optional: true
+      ioredis:
+        optional: true
+      kafkajs:
+        optional: true
+      mqtt:
+        optional: true
+      nats:
+        optional: true
+    dependencies:
+      '@nestjs/common': registry.npmmirror.com/@nestjs/common@9.0.0(cache-manager@5.3.1)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
+      '@nestjs/core': registry.npmmirror.com/@nestjs/core@9.0.0(@nestjs/common@9.0.0)(@nestjs/microservices@10.2.10)(@nestjs/platform-express@9.0.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
+      cache-manager: registry.npmmirror.com/cache-manager@5.3.1
+      iterare: registry.npmmirror.com/iterare@1.2.1
+      reflect-metadata: registry.npmmirror.com/reflect-metadata@0.1.13
+      rxjs: registry.npmmirror.com/rxjs@7.2.0
+      tslib: registry.npmmirror.com/tslib@2.6.2
+
   registry.npmmirror.com/@nestjs/passport@10.0.2(@nestjs/common@9.0.0)(passport@0.6.0):
     resolution: {integrity: sha512-od31vfB2z3y05IDB5dWSbCGE2+pAf2k2WCBinNuTTOxN0O0+wtO1L3kawj/aCW3YR9uxsTOVbTDwtwgpNNsnjQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@nestjs/passport/-/passport-10.0.2.tgz}
     id: registry.npmmirror.com/@nestjs/passport/10.0.2
@@ -1801,7 +1860,7 @@ packages:
       '@nestjs/core': ^9.0.0
     dependencies:
       '@nestjs/common': registry.npmmirror.com/@nestjs/common@9.0.0(cache-manager@5.3.1)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
-      '@nestjs/core': registry.npmmirror.com/@nestjs/core@9.0.0(@nestjs/common@9.0.0)(@nestjs/platform-express@9.0.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
+      '@nestjs/core': registry.npmmirror.com/@nestjs/core@9.0.0(@nestjs/common@9.0.0)(@nestjs/microservices@10.2.10)(@nestjs/platform-express@9.0.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
       body-parser: registry.npmmirror.com/body-parser@1.20.0
       cors: registry.npmmirror.com/cors@2.8.5
       express: registry.npmmirror.com/express@4.18.1
@@ -1849,7 +1908,7 @@ packages:
         optional: true
     dependencies:
       '@nestjs/common': registry.npmmirror.com/@nestjs/common@9.0.0(cache-manager@5.3.1)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
-      '@nestjs/core': registry.npmmirror.com/@nestjs/core@9.0.0(@nestjs/common@9.0.0)(@nestjs/platform-express@9.0.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
+      '@nestjs/core': registry.npmmirror.com/@nestjs/core@9.0.0(@nestjs/common@9.0.0)(@nestjs/microservices@10.2.10)(@nestjs/platform-express@9.0.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
       '@nestjs/mapped-types': registry.npmmirror.com/@nestjs/mapped-types@2.0.2(@nestjs/common@9.0.0)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)
       class-transformer: registry.npmmirror.com/class-transformer@0.5.1
       class-validator: registry.npmmirror.com/class-validator@0.14.0
@@ -1860,7 +1919,7 @@ packages:
       swagger-ui-dist: registry.npmmirror.com/swagger-ui-dist@5.7.2
     dev: false
 
-  registry.npmmirror.com/@nestjs/testing@9.0.0(@nestjs/common@9.0.0)(@nestjs/core@9.0.0)(@nestjs/platform-express@9.0.0):
+  registry.npmmirror.com/@nestjs/testing@9.0.0(@nestjs/common@9.0.0)(@nestjs/core@9.0.0)(@nestjs/microservices@10.2.10)(@nestjs/platform-express@9.0.0):
     resolution: {integrity: sha512-lBBzZvJWaYutYC1wOEKf4KOis/wxudBX0pVLZxzHmtbkeC2EQgQCbyKA88m1R9QeYTt9CmVMg4eyb+WeOADZiQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@nestjs/testing/-/testing-9.0.0.tgz}
     id: registry.npmmirror.com/@nestjs/testing/9.0.0
     name: '@nestjs/testing'
@@ -1877,7 +1936,8 @@ packages:
         optional: true
     dependencies:
       '@nestjs/common': registry.npmmirror.com/@nestjs/common@9.0.0(cache-manager@5.3.1)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
-      '@nestjs/core': registry.npmmirror.com/@nestjs/core@9.0.0(@nestjs/common@9.0.0)(@nestjs/platform-express@9.0.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
+      '@nestjs/core': registry.npmmirror.com/@nestjs/core@9.0.0(@nestjs/common@9.0.0)(@nestjs/microservices@10.2.10)(@nestjs/platform-express@9.0.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
+      '@nestjs/microservices': registry.npmmirror.com/@nestjs/microservices@10.2.10(@nestjs/common@9.0.0)(@nestjs/core@9.0.0)(cache-manager@5.3.1)(reflect-metadata@0.1.13)(rxjs@7.2.0)
       '@nestjs/platform-express': registry.npmmirror.com/@nestjs/platform-express@9.0.0(@nestjs/common@9.0.0)(@nestjs/core@9.0.0)
       tslib: registry.npmmirror.com/tslib@2.4.0
     dev: true
@@ -1956,6 +2016,72 @@ packages:
       rc-util: registry.npmmirror.com/rc-util@5.38.1(react-dom@18.2.0)(react@18.2.0)
       react: registry.npmmirror.com/react@18.2.0
       react-dom: registry.npmmirror.com/react-dom@18.2.0(react@18.2.0)
+    dev: false
+
+  registry.npmmirror.com/@redis/bloom@1.2.0(@redis/client@1.5.12):
+    resolution: {integrity: sha512-HG2DFjYKbpNmVXsa0keLHp/3leGJz1mjh09f2RLGGLQZzSHpkmZWuwJbAvo3QcRY8p80m5+ZdXZdYOSBLlp7Cg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@redis/bloom/-/bloom-1.2.0.tgz}
+    id: registry.npmmirror.com/@redis/bloom/1.2.0
+    name: '@redis/bloom'
+    version: 1.2.0
+    peerDependencies:
+      '@redis/client': ^1.0.0
+    dependencies:
+      '@redis/client': registry.npmmirror.com/@redis/client@1.5.12
+    dev: false
+
+  registry.npmmirror.com/@redis/client@1.5.12:
+    resolution: {integrity: sha512-/ZjE18HRzMd80eXIIUIPcH81UoZpwulbo8FmbElrjPqH0QC0SeIKu1BOU49bO5trM5g895kAjhvalt5h77q+4A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@redis/client/-/client-1.5.12.tgz}
+    name: '@redis/client'
+    version: 1.5.12
+    engines: {node: '>=14'}
+    dependencies:
+      cluster-key-slot: registry.npmmirror.com/cluster-key-slot@1.1.2
+      generic-pool: registry.npmmirror.com/generic-pool@3.9.0
+      yallist: registry.npmmirror.com/yallist@4.0.0
+    dev: false
+
+  registry.npmmirror.com/@redis/graph@1.1.1(@redis/client@1.5.12):
+    resolution: {integrity: sha512-FEMTcTHZozZciLRl6GiiIB4zGm5z5F3F6a6FZCyrfxdKOhFlGkiAqlexWMBzCi4DcRoyiOsuLfW+cjlGWyExOw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@redis/graph/-/graph-1.1.1.tgz}
+    id: registry.npmmirror.com/@redis/graph/1.1.1
+    name: '@redis/graph'
+    version: 1.1.1
+    peerDependencies:
+      '@redis/client': ^1.0.0
+    dependencies:
+      '@redis/client': registry.npmmirror.com/@redis/client@1.5.12
+    dev: false
+
+  registry.npmmirror.com/@redis/json@1.0.6(@redis/client@1.5.12):
+    resolution: {integrity: sha512-rcZO3bfQbm2zPRpqo82XbW8zg4G/w4W3tI7X8Mqleq9goQjAGLL7q/1n1ZX4dXEAmORVZ4s1+uKLaUOg7LrUhw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@redis/json/-/json-1.0.6.tgz}
+    id: registry.npmmirror.com/@redis/json/1.0.6
+    name: '@redis/json'
+    version: 1.0.6
+    peerDependencies:
+      '@redis/client': ^1.0.0
+    dependencies:
+      '@redis/client': registry.npmmirror.com/@redis/client@1.5.12
+    dev: false
+
+  registry.npmmirror.com/@redis/search@1.1.6(@redis/client@1.5.12):
+    resolution: {integrity: sha512-mZXCxbTYKBQ3M2lZnEddwEAks0Kc7nauire8q20oA0oA/LoA+E/b5Y5KZn232ztPb1FkIGqo12vh3Lf+Vw5iTw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@redis/search/-/search-1.1.6.tgz}
+    id: registry.npmmirror.com/@redis/search/1.1.6
+    name: '@redis/search'
+    version: 1.1.6
+    peerDependencies:
+      '@redis/client': ^1.0.0
+    dependencies:
+      '@redis/client': registry.npmmirror.com/@redis/client@1.5.12
+    dev: false
+
+  registry.npmmirror.com/@redis/time-series@1.0.5(@redis/client@1.5.12):
+    resolution: {integrity: sha512-IFjIgTusQym2B5IZJG3XKr5llka7ey84fw/NOYqESP5WUfQs9zz1ww/9+qoz4ka/S6KcGBodzlCeZ5UImKbscg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@redis/time-series/-/time-series-1.0.5.tgz}
+    id: registry.npmmirror.com/@redis/time-series/1.0.5
+    name: '@redis/time-series'
+    version: 1.0.5
+    peerDependencies:
+      '@redis/client': ^1.0.0
+    dependencies:
+      '@redis/client': registry.npmmirror.com/@redis/client@1.5.12
     dev: false
 
   registry.npmmirror.com/@rematch/core@2.2.0(redux@4.2.1):
@@ -3786,6 +3912,15 @@ packages:
     version: 3.1.2
     engines: {node: '>= 0.8'}
 
+  registry.npmmirror.com/cache-manager-redis-store@3.0.1:
+    resolution: {integrity: sha512-o560kw+dFqusC9lQJhcm6L2F2fMKobJ5af+FoR2PdnMVdpQ3f3Bz6qzvObTGyvoazQJxjQNWgMQeChP4vRTuXQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/cache-manager-redis-store/-/cache-manager-redis-store-3.0.1.tgz}
+    name: cache-manager-redis-store
+    version: 3.0.1
+    engines: {node: '>= 16.18.0'}
+    dependencies:
+      redis: registry.npmmirror.com/redis@4.6.11
+    dev: false
+
   registry.npmmirror.com/cache-manager@5.3.1:
     resolution: {integrity: sha512-9HP6nc1ZqyZgcVEpy5XS2ns9MYE6cPEM6InA1wQhR6M7GviJzLH2NTFYnf3NEfRmLE351NCSkDo2VISX8dlG+w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/cache-manager/-/cache-manager-5.3.1.tgz}
     name: cache-manager
@@ -4052,6 +4187,13 @@ packages:
     version: 1.0.4
     engines: {node: '>=0.8'}
     dev: true
+
+  registry.npmmirror.com/cluster-key-slot@1.1.2:
+    resolution: {integrity: sha512-RMr0FhtfXemyinomL4hrWcYJxmX6deFdCxpJzhDttxgO1+bcCnkk+9drydLVDmAMG7NE6aN/fl4F7ucU/90gAA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/cluster-key-slot/-/cluster-key-slot-1.1.2.tgz}
+    name: cluster-key-slot
+    version: 1.1.2
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   registry.npmmirror.com/co@4.6.0:
     resolution: {integrity: sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/co/-/co-4.6.0.tgz}
@@ -5568,6 +5710,13 @@ packages:
     version: 2.3.1
     dependencies:
       is-property: registry.npmmirror.com/is-property@1.0.2
+    dev: false
+
+  registry.npmmirror.com/generic-pool@3.9.0:
+    resolution: {integrity: sha512-hymDOu5B53XvN4QT9dBmZxPX4CWhBPPLguTZ9MMFeFa/Kg0xWVfylOVNlJji/E7yTZWFd/q9GO5TxDLq156D7g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/generic-pool/-/generic-pool-3.9.0.tgz}
+    name: generic-pool
+    version: 3.9.0
+    engines: {node: '>= 4'}
     dev: false
 
   registry.npmmirror.com/gensync@1.0.0-beta.2:
@@ -7735,7 +7884,7 @@ packages:
       typeorm: ^0.3.0
     dependencies:
       '@nestjs/common': registry.npmmirror.com/@nestjs/common@9.0.0(cache-manager@5.3.1)(class-transformer@0.5.1)(class-validator@0.14.0)(reflect-metadata@0.1.13)(rxjs@7.2.0)
-      typeorm: registry.npmmirror.com/typeorm@0.3.17(mongodb@6.1.0)(mysql2@3.6.1)(ts-node@10.0.0)
+      typeorm: registry.npmmirror.com/typeorm@0.3.17(mongodb@6.1.0)(mysql2@3.6.1)(redis@4.6.11)(ts-node@10.0.0)
     dev: false
 
   registry.npmmirror.com/no-case@3.0.4:
@@ -9256,6 +9405,19 @@ packages:
       resolve: registry.npmmirror.com/resolve@1.22.6
     dev: true
 
+  registry.npmmirror.com/redis@4.6.11:
+    resolution: {integrity: sha512-kg1Lt4NZLYkAjPOj/WcyIGWfZfnyfKo1Wg9YKVSlzhFwxpFIl3LYI8BWy1Ab963LLDsTz2+OwdsesHKljB3WMQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/redis/-/redis-4.6.11.tgz}
+    name: redis
+    version: 4.6.11
+    dependencies:
+      '@redis/bloom': registry.npmmirror.com/@redis/bloom@1.2.0(@redis/client@1.5.12)
+      '@redis/client': registry.npmmirror.com/@redis/client@1.5.12
+      '@redis/graph': registry.npmmirror.com/@redis/graph@1.1.1(@redis/client@1.5.12)
+      '@redis/json': registry.npmmirror.com/@redis/json@1.0.6(@redis/client@1.5.12)
+      '@redis/search': registry.npmmirror.com/@redis/search@1.1.6(@redis/client@1.5.12)
+      '@redis/time-series': registry.npmmirror.com/@redis/time-series@1.0.5(@redis/client@1.5.12)
+    dev: false
+
   registry.npmmirror.com/redux@4.2.1:
     resolution: {integrity: sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/redux/-/redux-4.2.1.tgz}
     name: redux
@@ -10625,7 +10787,7 @@ packages:
     name: typedarray
     version: 0.0.6
 
-  registry.npmmirror.com/typeorm@0.3.17(mongodb@6.1.0)(mysql2@3.6.1)(ts-node@10.0.0):
+  registry.npmmirror.com/typeorm@0.3.17(mongodb@6.1.0)(mysql2@3.6.1)(redis@4.6.11)(ts-node@10.0.0):
     resolution: {integrity: sha512-UDjUEwIQalO9tWw9O2A4GU+sT3oyoUXheHJy4ft+RFdnRdQctdQ34L9SqE2p7LdwzafHx1maxT+bqXON+Qnmig==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/typeorm/-/typeorm-0.3.17.tgz}
     id: registry.npmmirror.com/typeorm/0.3.17
     name: typeorm
@@ -10698,6 +10860,7 @@ packages:
       mkdirp: registry.npmmirror.com/mkdirp@2.1.6
       mongodb: registry.npmmirror.com/mongodb@6.1.0
       mysql2: registry.npmmirror.com/mysql2@3.6.1
+      redis: registry.npmmirror.com/redis@4.6.11
       reflect-metadata: registry.npmmirror.com/reflect-metadata@0.1.13
       sha.js: registry.npmmirror.com/sha.js@2.4.11
       ts-node: registry.npmmirror.com/ts-node@10.0.0(@types/node@18.15.11)(typescript@4.7.4)

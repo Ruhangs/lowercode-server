@@ -9,7 +9,7 @@ declare class CustomPaginationMeta {
     public readonly totalCounts: number,
     public readonly totalPages: number,
     public readonly currentPage: number,
-  ) { }
+  ) {}
 }
 
 declare type Payload = {

@@ -2,8 +2,8 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "declaration": false,
-    "outDir": "../../dist/apps/devops"
+    "outDir": "../../dist/apps/materials"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "../../types/*.d.ts"],
   "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
 }
